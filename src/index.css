@@ -131,7 +131,7 @@
   }
   
   .card-3d:hover {
-    transform: rotateY(5deg) rotateX(5deg);
+    transform: perspective(1000px) rotateY(5deg) rotateX(5deg);
   }
 }
 
