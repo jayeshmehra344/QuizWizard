@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -54,14 +53,17 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				quiz: {
-					purple: '#9b87f5',
-					'light-purple': '#E5DEFF',
+					purple: '#8B5CF6',
+					'light-purple': '#9d8df2',
 					'dark-purple': '#6E59A5',
-					pink: '#FFDEE2',
-					peach: '#FDE1D3',
+					pink: '#FF2E63',
+					peach: '#FF9A8B',
 					yellow: '#FEF7CD',
-					green: '#F2FCE2',
-					blue: '#D3E4FD',
+					green: '#08D9D6',
+					blue: '#252A34',
+					dark: '#1A1F2C',
+					'dark-blue': '#0C1323',
+					neon: '#00FF9D',
 				}
 			},
 			borderRadius: {
@@ -113,6 +115,30 @@ export default {
 					'50%': {
 						opacity: '0.8'
 					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'rotate-slow': {
+					'0%': {
+						transform: 'rotate(0deg)'
+					},
+					'100%': {
+						transform: 'rotate(360deg)'
+					}
+				},
+				'glow': {
+					'0%, 100%': {
+						boxShadow: '0 0 5px rgba(139, 92, 246, 0.5)'
+					},
+					'50%': {
+						boxShadow: '0 0 20px rgba(139, 92, 246, 0.8), 0 0 30px rgba(139, 92, 246, 0.6)'
+					}
 				}
 			},
 			animation: {
@@ -120,7 +146,10 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.3s ease-out',
 				'fade-out': 'fade-out 0.3s ease-out',
-				'pulse-soft': 'pulse-soft 2s infinite'
+				'pulse-soft': 'pulse-soft 2s infinite',
+				'float': 'float 3s ease-in-out infinite',
+				'rotate-slow': 'rotate-slow 15s linear infinite',
+				'glow': 'glow 2s ease-in-out infinite',
 			}
 		}
 	},

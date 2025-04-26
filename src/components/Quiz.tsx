@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import QuestionCard from './QuestionCard';
 import ResultScreen from './ResultScreen';
 import { quizQuestions } from '../data/questions';
+import { Progress } from '@/components/ui/progress';
 
 const Quiz = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -47,17 +48,12 @@ const Quiz = () => {
         {!quizCompleted ? (
           <>
             <div className="mb-6">
-              <div className="flex justify-between text-sm text-gray-500 mb-2">
+              <div className="flex justify-between text-sm text-white/70 mb-2">
                 <span>Question {currentQuestionIndex + 1} of {quizQuestions.length}</span>
                 <span>Score: {score}</span>
               </div>
               
-              <div className="progress-bar">
-                <div 
-                  className="progress-bar-fill" 
-                  style={{ width: `${progress}%` }} 
-                />
-              </div>
+              <Progress value={progress} className="h-2" />
             </div>
             
             <QuestionCard

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Question } from '../data/questions';
+import { CheckCircle, XCircle } from 'lucide-react';
 
 interface QuestionCardProps {
   question: Question;
@@ -34,24 +35,40 @@ const QuestionCard = ({
   
   return (
     <div className="animate-fade-in mb-6">
-      <h2 className="text-xl md:text-2xl font-semibold mb-6 text-gray-800">
+      <h2 className="text-xl md:text-2xl font-semibold mb-6 text-white">
         {question.question}
       </h2>
       
       <div className="space-y-3">
-        {question.options.map((option, index) => (
-          <button
-            key={index}
-            onClick={() => !showFeedback && onSelectAnswer(index)}
-            disabled={showFeedback}
-            className={`option-button ${getOptionClass(index)}`}
-          >
-            <span className="inline-block w-7 h-7 mr-3 text-center rounded-full bg-quiz-light-purple">
-              {String.fromCharCode(65 + index)}
-            </span>
-            {option}
-          </button>
-        ))}
+        {question.options.map((option, index) => {
+          const optionClass = getOptionClass(index);
+          
+          return (
+            <button
+              key={index}
+              onClick={() => !showFeedback && onSelectAnswer(index)}
+              disabled={showFeedback}
+              className={`option-button ${optionClass}`}
+            >
+              <div className="flex items-center justify-between">
+                <div className="flex items-center">
+                  <span className="inline-block w-7 h-7 mr-3 text-center rounded-full bg-quiz-purple/30 text-white">
+                    {String.fromCharCode(65 + index)}
+                  </span>
+                  {option}
+                </div>
+                
+                {showFeedback && index === question.correctAnswer && (
+                  <CheckCircle className="h-5 w-5 text-green-500" />
+                )}
+                
+                {showFeedback && selectedAnswer === index && index !== question.correctAnswer && (
+                  <XCircle className="h-5 w-5 text-red-500" />
+                )}
+              </div>
+            </button>
+          );
+        })}
       </div>
     </div>
   );

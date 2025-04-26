@@ -1,5 +1,7 @@
 
 import React from 'react';
+import { Award, RotateCcw, Share2 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 interface ResultScreenProps {
   score: number;
@@ -24,31 +26,45 @@ const ResultScreen = ({ score, totalQuestions, onRestart }: ResultScreenProps) =
   
   return (
     <div className="animate-fade-in text-center">
-      <h2 className="text-2xl md:text-3xl font-bold mb-4 text-quiz-dark-purple">
-        Your Score
-      </h2>
+      <div className="mb-8">
+        <Award className="h-16 w-16 text-quiz-purple mx-auto mb-4" />
+        <h2 className="text-2xl md:text-3xl font-bold mb-2 neo-text">
+          Quiz Completed!
+        </h2>
+      </div>
       
-      <div className="mb-6 relative">
+      <div className="mb-8 relative glass-effect p-8 rounded-xl">
         <div className="text-5xl md:text-6xl font-bold text-quiz-purple animate-pulse-soft">
           {score} / {totalQuestions}
         </div>
-        <div className="text-lg text-gray-600 mt-2">
+        <div className="text-lg text-white/70 mt-2">
           ({percentage.toFixed(0)}%)
         </div>
       </div>
       
-      <div className="my-6 py-4 px-5 bg-quiz-light-purple rounded-lg">
-        <p className="text-lg md:text-xl font-medium text-quiz-dark-purple">
+      <div className="my-8 py-4 px-5 glass-effect rounded-lg">
+        <p className="text-lg md:text-xl font-medium text-white">
           {getMessage()}
         </p>
       </div>
       
-      <button
-        onClick={onRestart}
-        className="mt-6 py-3 px-8 bg-quiz-purple hover:bg-quiz-dark-purple text-white rounded-lg transition-all duration-300 transform hover:scale-105"
-      >
-        Try Again
-      </button>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button
+          onClick={onRestart}
+          className="bg-quiz-purple hover:bg-quiz-dark-purple text-white flex items-center justify-center"
+        >
+          <RotateCcw className="mr-2 h-4 w-4" />
+          Try Again
+        </Button>
+        
+        <Button
+          variant="outline"
+          className="border-quiz-purple text-white hover:bg-quiz-purple/20"
+        >
+          <Share2 className="mr-2 h-4 w-4" />
+          Share Result
+        </Button>
+      </div>
     </div>
   );
 };
