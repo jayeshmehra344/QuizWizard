@@ -1,12 +1,26 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from 'react';
+import Quiz from '../components/Quiz';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen quiz-gradient flex flex-col">
+      <header className="py-6 md:py-8 px-4 text-center">
+        <h1 className="text-2xl md:text-4xl font-bold text-quiz-dark-purple">
+          Fun Quiz Time!
+        </h1>
+        <p className="mt-2 text-gray-600">
+          Test your knowledge with these fun questions!
+        </p>
+      </header>
+      
+      <main className="flex-grow flex items-center justify-center px-4 pb-10">
+        <Quiz />
+      </main>
+      
+      <footer className="py-4 text-center text-gray-500 text-sm">
+        <p>Made with ❤️ for learning</p>
+      </footer>
     </div>
   );
 };
