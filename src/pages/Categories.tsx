@@ -25,7 +25,7 @@ const Categories = () => {
   return (
     <div className="min-h-screen quiz-gradient">
       {/* Navigation Bar - This will be a shared component */}
-      <nav className="backdrop-blur-md bg-black/30 border-b border-quiz-purple/20 px-4 py-3 fixed w-full top-0 z-50">
+      <nav className="backdrop-blur-md bg-indigo-800 border-b border-quiz-purple/20 px-4 py-3 fixed w-full top-0 z-50">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
             <BookOpen className="h-6 w-6 text-quiz-purple" />

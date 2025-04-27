@@ -37,13 +37,13 @@ const ResultScreen = ({ score, totalQuestions, onRestart }: ResultScreenProps) =
         <div className="text-5xl md:text-6xl font-bold text-quiz-purple animate-pulse-soft">
           {score} / {totalQuestions}
         </div>
-        <div className="text-lg text-white/70 mt-2">
+        <div className="text-lg text-quiz-purple mt-2">
           ({percentage.toFixed(0)}%)
         </div>
       </div>
       
       <div className="my-8 py-4 px-5 glass-effect rounded-lg">
-        <p className="text-lg md:text-xl font-medium text-white">
+        <p className="text-lg md:text-xl font-medium text-quiz-purple">
           {getMessage()}
         </p>
       </div>

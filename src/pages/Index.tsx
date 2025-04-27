@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, Award, User, ArrowRight, Brain, Zap, Globe, Star } from 'lucide-react';
+import { BookOpen, Award, User, ArrowRight, Brain, Zap, Globe, Star, Lightbulb } from 'lucide-react';
 import Quiz from '../components/Quiz';
 
 const Index = () => {
@@ -13,12 +13,12 @@ const Index = () => {
       <div className="absolute bottom-0 left-0 w-full h-1/2 bg-quiz-dark-blue/50 opacity-30 backdrop-blur-3xl"></div>
 
       {/* Navigation Bar */}
-      <nav className="backdrop-blur-md bg-black/30 border-b border-quiz-purple/20 px-4 py-3 fixed w-full top-0 z-50">
+      <nav className="backdrop-blur-md bg-indigo-800 border-b border-quiz-purple/20 px-4 py-3 fixed w-full top-0 z-50">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
-            <BookOpen className="h-6 w-6 text-quiz-purple" />
+            <Lightbulb className="h-6 w-6 text-quiz-purple" />
             <span className="text-2xl font-bold neo-text">
-              QuizWiz
+              QuizWizard
             </span>
           </Link>
           
@@ -46,7 +46,7 @@ const Index = () => {
             <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in neo-text">
               Challenge Your Mind with QuizWiz
             </h1>
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 animate-fade-in">
+            <p className="text-lg md:text-xl text-quiz-purple max-w-2xl mx-auto mb-10 animate-fade-in">
               Explore thousands of quizzes across different categories.
               Test your knowledge, compete with others, and track your progress!
             </p>
@@ -119,12 +119,12 @@ const Index = () => {
           <div className="max-w-5xl mx-auto">
             <div className="glass-effect p-6 md:p-10 rounded-2xl border border-quiz-purple/30">
               <div className="text-center mb-10">
-                <div className="inline-flex items-center px-4 py-1 rounded-full bg-quiz-purple/20 text-white/90 text-sm mb-4">
+                <div className="inline-flex items-center px-4 py-1 rounded-full bg-quiz-purple/20 text-black text-sm mb-4">
                   <Star className="h-4 w-4 mr-2" />
                   Try a Sample Quiz
                 </div>
                 <h2 className="text-3xl font-bold mb-4 neo-text">Test Your Knowledge</h2>
-                <p className="text-white/70 max-w-lg mx-auto">
+                <p className="text-black max-w-lg mx-auto">
                   Get a feel for our quizzes with this sample. Answer the questions and see how you score!
                 </p>
               </div>

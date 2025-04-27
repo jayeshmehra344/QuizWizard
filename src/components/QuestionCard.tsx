@@ -35,7 +35,7 @@ const QuestionCard = ({
   
   return (
     <div className="animate-fade-in mb-6">
-      <h2 className="text-xl md:text-2xl font-semibold mb-6 text-white">
+      <h2 className="text-xl md:text-2xl font-semibold mb-6 text-black">
         {question.question}
       </h2>
       
@@ -45,11 +45,12 @@ const QuestionCard = ({
           
           return (
             <button
-              key={index}
-              onClick={() => !showFeedback && onSelectAnswer(index)}
-              disabled={showFeedback}
-              className={`option-button ${optionClass}`}
+            key={index}
+            onClick={() => !showFeedback && onSelectAnswer(index)}
+            disabled={showFeedback}
+            className={`w-full flex items-center justify-between p-4 rounded-lg text-black bg-white border border-gray-300 hover:bg-gray-100 transition ${optionClass}`}
             >
+
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
                   <span className="inline-block w-7 h-7 mr-3 text-center rounded-full bg-quiz-purple/30 text-white">

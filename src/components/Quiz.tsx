@@ -48,7 +48,7 @@ const Quiz = () => {
         {!quizCompleted ? (
           <>
             <div className="mb-6">
-              <div className="flex justify-between text-sm text-white/70 mb-2">
+              <div className="flex justify-between text-sm text-black mb-2">
                 <span>Question {currentQuestionIndex + 1} of {quizQuestions.length}</span>
                 <span>Score: {score}</span>
               </div>
