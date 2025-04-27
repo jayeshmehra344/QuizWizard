@@ -1,0 +1,290 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 30% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 25% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 25% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 262 80% 75%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 230 25% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 230 20% 20%;
+    --muted-foreground: 220 10% 70%;
+
+    --accent: 230 25% 24%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 230 20% 20%;
+    --input: 230 20% 20%;
+    --ring: 262 80% 75%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-quiz-dark-blue text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  .quiz-gradient {
+    @apply bg-gradient-to-br from-quiz-dark-blue via-quiz-dark-purple to-quiz-blue;
+  }
+  
+  .tech-card {
+    @apply backdrop-blur-lg bg-black/30 border border-quiz-purple/20 rounded-lg shadow-lg;
+  }
+  
+  .quiz-card {
+    @apply bg-black/40 backdrop-blur-lg rounded-xl shadow-lg border border-quiz-purple/20;
+  }
+  
+  .nav-link {
+    @apply flex items-center gap-2 px-4 py-2 rounded-lg text-gray-300 hover:text-quiz-neon hover:bg-quiz-purple/10 transition-all duration-300;
+  }
+  
+  .option-button {
+    @apply w-full py-3 px-4 rounded-lg text-left transition-all duration-300 border-2 border-quiz-purple/30 hover:border-quiz-purple/70 hover:bg-quiz-purple/10 backdrop-blur-sm;
+  }
+  
+  .option-button.selected {
+    @apply bg-quiz-purple/20 border-quiz-purple font-medium;
+  }
+  
+  .option-button.correct {
+    @apply bg-quiz-green/20 border-quiz-green font-medium;
+  }
+  
+  .option-button.incorrect {
+    @apply bg-quiz-pink/20 border-quiz-pink font-medium;
+  }
+  
+  .progress-bar {
+    @apply h-2 rounded-full bg-quiz-purple/20 overflow-hidden;
+  }
+  
+  .progress-bar-fill {
+    @apply h-full bg-quiz-purple transition-all duration-500 ease-out;
+  }
+  
+  .tech-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative;
+  }
+  
+  .tech-grid::before {
+    content: '';
+    @apply absolute -inset-4 bg-quiz-purple/5 -z-10 blur-3xl rounded-full;
+  }
+  
+  .glow-effect {
+    @apply relative;
+  }
+  
+  .glow-effect::after {
+    content: '';
+    @apply absolute -inset-0.5 bg-gradient-to-r from-quiz-purple via-quiz-neon to-quiz-purple -z-10 opacity-30 blur-sm rounded-lg;
+  }
+  
+  .floating-element {
+    @apply animate-float;
+  }
+  
+  .rotating-element {
+    @apply animate-rotate-slow;
+  }
+  
+  .glowing {
+    @apply animate-glow;
+  }
+  
+  .neo-text {
+    @apply font-bold bg-gradient-to-r from-quiz-purple to-quiz-neon bg-clip-text text-transparent;
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/5 border border-white/10 rounded-lg;
+  }
+  
+  /* 3D card effect */
+  .card-3d {
+    @apply transition-transform duration-300;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+  }
+  
+  .card-3d:hover {
+    transform: perspective(1000px) rotateY(5deg) rotateX(5deg);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  .quiz-gradient {
+    background: linear-gradient(135deg, #E5DEFF 0%, #D3E4FD 100%);
+  }
+  
+  .quiz-card {
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+  }
+  
+  .option-button {
+    @apply w-full py-3 px-4 rounded-lg text-left transition-all duration-300 border-2 hover:border-quiz-purple hover:bg-quiz-light-purple;
+  }
+  
+  .option-button.selected {
+    @apply bg-quiz-light-purple border-quiz-purple font-medium;
+  }
+  
+  .option-button.correct {
+    @apply bg-quiz-green border-green-500 font-medium;
+  }
+  
+  .option-button.incorrect {
+    @apply bg-quiz-pink border-red-400 font-medium;
+  }
+  
+  .progress-bar {
+    @apply h-2 rounded-full bg-quiz-light-purple overflow-hidden;
+  }
+  
+  .progress-bar-fill {
+    @apply h-full bg-quiz-purple transition-all duration-500 ease-out;
+  }
+}
+
+@layer keyframes {
+  .slide-in-left {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .slide-out-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .slide-in-right {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .slide-out-right {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+
+  .slide-in-top {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .slide-out-top {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+
+  .slide-in-bottom {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .slide-out-bottom {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(100%);
+    }
+  }
+}
+
+@layer animations {
+  .animate-slide-in-left {
+    animation: slide-in-left 0.3s ease-out forwards;
+  }
+
+  .animate-slide-out-left {
+    animation: slide-out-left 0.3s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.3s ease-out forwards;
+  }
+
+  .animate-slide-out-right {
+    animation: slide-out-right 0.3s ease-out forwards;
+  }
+
+  .animate-slide-in-top {
+    animation: slide-in-top 0.3s ease-out forwards;
+  }
+
+  .animate-slide-out-top {
+    animation: slide-out-top 0.3s ease-out forwards;
+  }
+
+  .animate-slide-in-bottom {
+    animation: slide-in-bottom 0.3s ease-out forwards;
+  }
+
+  .animate-slide-out-bottom {
+    animation: slide-out-bottom 0.3s ease-out forwards;
+  }
+}
